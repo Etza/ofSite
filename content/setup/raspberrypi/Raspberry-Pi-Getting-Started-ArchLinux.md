@@ -8,6 +8,7 @@ Getting your Raspberry Pi 2 B ready for openFrameworks
 
 _*This has to be done under a linux computer (you can use raspbian :D)_
 
+
 ---
 
 Replace **sdX** in the following instructions with the device name for the SD card as it appears on your computer.
@@ -60,6 +61,14 @@ Insert the SD card into the Raspberry Pi, connect ethernet, and apply 5V power.
 Use the serial console or SSH to the IP address given to the board by your router.
 Login as **root** with the default password **_root_**.
 The default root password is root.
+
+/
+
+A simple alternative is to use Berryboot to configure your SSD card - it works like the raspbian installer - create a single FAT32 partition on the SSD card, download berryboot and copy the content to the SSD card. Insert into RPi with ethernet connected to internet and power on ! 
+http://www.berryterminal.com/doku.php/berryboot
+
+ For those RPi users new to Archlinux here is a good FAQ http://archpi.dabase.com/#to-update1
+ 
 
 ---
 ##Accommodate
@@ -167,6 +176,11 @@ Archlinux doesn't have an rtaudio package in their armv7 repositories. You can d
 	[This usually takes some time and has some prompts (accept them)]
 	
 	* sudo install_codecs.sh
+	
+
++ Install the gst-omx package (for hardware video acceleration)
+
+	* curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/gst-omx.tar.gz
 	
 + Set makeflags (you can put this in your .bash_profile so you don't have to type it in every time)
 
